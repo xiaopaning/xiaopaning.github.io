@@ -140,7 +140,7 @@
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -150,7 +150,7 @@
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -216,7 +216,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2017-03-15T10:29:43+08:00" content="2017-03-15">
               2017-03-15
             </time>
@@ -246,7 +246,24 @@
       
         
           
-            
+            <h3 id="hexo-搭建个人博客"><a href="#hexo-搭建个人博客" class="headerlink" title="hexo 搭建个人博客"></a>hexo 搭建个人博客</h3><h4 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h4><p>快速、简洁且高效的博客框架</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-cli -g</div><div class="line"></div><div class="line">$ hexo init blog</div><div class="line"></div><div class="line">$ <span class="built_in">cd</span> blog</div><div class="line"></div><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>在浏览器中打开  <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 链接<br>若页面显示了hexo，则表示成功，可以进行下来的步骤</p>
+<h4 id="github-page"><a href="#github-page" class="headerlink" title="github page"></a>github page</h4><p>接下来在GitHub中创建一个仓库，复制粘贴ssh，格式如下</p>
+<pre><code>git@github.com:github_name/repository_name.github.io.git
+</code></pre><p>打开本地blog下的_config.yml，将deploy补充完整</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo: git@github.com:github_name/repository_name.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<p>注意此处分号前边无空格，后边有空格，否则会报错</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<p>好了，大功告成。下来就开始玩自己的博客了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"fisrt_blog"</span></div></pre></td></tr></table></figure>
+<p>创建好之后，进入</p>
+<pre><code>source --&gt; _posts --&gt; fisrt_blog.md
+</code></pre><p>使用makedown 语句，写入自己的博客</p>
+<pre><code>hexo g 
+hexo d
+</code></pre><p>完成！！<br>打开 <a href="https://repository_name.github.io" target="_blank" rel="external">https://repository_name.github.io</a> 就可以之间观看了</p>
+
           
         
       
@@ -304,7 +321,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2017-03-15T10:03:23+08:00" content="2017-03-15">
               2017-03-15
             </time>
@@ -409,7 +426,7 @@
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">2</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
@@ -458,7 +475,7 @@
 </div>
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
