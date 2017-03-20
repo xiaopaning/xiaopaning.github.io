@@ -69,7 +69,7 @@ github page接下来在GitHub中创建一个仓库，复制粘贴ssh，格式">
 1234567$ npm install hexo-cli -g$ hexo init blog$ cd blog$ hexo server
 在浏览器中打开  http://localhost:4000/ 链接若页面显示了hexo，则表示成功，可以进行下来的步骤
 github page接下来在GitHub中创建一个仓库，复制粘贴ssh，格式">
-<meta property="og:updated_time" content="2017-03-20T08:21:45.000Z">
+<meta property="og:updated_time" content="2017-03-20T08:43:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+github">
 <meta name="twitter:description" content="hexo 搭建个人博客hexo快速、简洁且高效的博客框架
@@ -269,6 +269,15 @@ github page接下来在GitHub中创建一个仓库，复制粘贴ssh，格式">
 <pre><code>hexo g 
 hexo d
 </code></pre><p>完成！！<br>打开 <a href="https://repository_name.github.io" target="_blank" rel="external">https://repository_name.github.io</a> 就可以之间观看了</p>
+<h3 id="改变hexo的主题"><a href="#改变hexo的主题" class="headerlink" title="改变hexo的主题"></a>改变hexo的主题</h3><pre><code>themes --&gt; landscape 是默认主题
+</code></pre><p>更换主题需要做两步<br>第一步 安装主题</p>
+<pre><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
+</code></pre><p>第二部 配置<br>    打开_config.yml，作如下修改</p>
+<pre><code>theme: yilia
+</code></pre><p>本地起一个服务<br>    hexo s<br>主题更新了，那就搞定了，接着：</p>
+<pre><code>hexo g
+hexo d
+</code></pre><p>完成GitHub page 上的更新</p>
 
       
     </div>
@@ -394,7 +403,7 @@ hexo d
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-搭建个人博客"><span class="nav-number">1.</span> <span class="nav-text">hexo 搭建个人博客</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#hexo"><span class="nav-number">1.1.</span> <span class="nav-text">hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#github-page"><span class="nav-number">1.2.</span> <span class="nav-text">github page</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-搭建个人博客"><span class="nav-number">1.</span> <span class="nav-text">hexo 搭建个人博客</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#hexo"><span class="nav-number">1.1.</span> <span class="nav-text">hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#github-page"><span class="nav-number">1.2.</span> <span class="nav-text">github page</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改变hexo的主题"><span class="nav-number">2.</span> <span class="nav-text">改变hexo的主题</span></a></li></ol></div>
             
           </div>
         </section>
