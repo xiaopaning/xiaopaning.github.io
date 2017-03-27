@@ -57,7 +57,7 @@
 
 
 
-<meta name="description" content="第一步：
+<meta name="description" content="gulp安装学习gulp，最好的导师是npm第一步：
 全局安装 gulp 
 $ npm install --global gulp-cli
 作为项目的开发依赖安装
@@ -65,12 +65,12 @@ $ npm install --save-dev gulp
 第二步：
 在项目根目录下创建一个名为 gulpfile.js 的文件：
 var gulp =  require（&amp;apos; gulp &amp;apos;）;
-gulp.task（&amp;apos; default &amp;apos;，f">
+gulp.task（&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="gulp">
 <meta property="og:url" content="http://yoursite.com/2017/03/22/glup/index.html">
 <meta property="og:site_name" content="xiaopaning'blog">
-<meta property="og:description" content="第一步：
+<meta property="og:description" content="gulp安装学习gulp，最好的导师是npm第一步：
 全局安装 gulp 
 $ npm install --global gulp-cli
 作为项目的开发依赖安装
@@ -78,11 +78,11 @@ $ npm install --save-dev gulp
 第二步：
 在项目根目录下创建一个名为 gulpfile.js 的文件：
 var gulp =  require（&amp;apos; gulp &amp;apos;）;
-gulp.task（&amp;apos; default &amp;apos;，f">
-<meta property="og:updated_time" content="2017-03-27T01:29:49.000Z">
+gulp.task（&amp;">
+<meta property="og:updated_time" content="2017-03-27T08:32:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gulp">
-<meta name="twitter:description" content="第一步：
+<meta name="twitter:description" content="gulp安装学习gulp，最好的导师是npm第一步：
 全局安装 gulp 
 $ npm install --global gulp-cli
 作为项目的开发依赖安装
@@ -90,7 +90,7 @@ $ npm install --save-dev gulp
 第二步：
 在项目根目录下创建一个名为 gulpfile.js 的文件：
 var gulp =  require（&amp;apos; gulp &amp;apos;）;
-gulp.task（&amp;apos; default &amp;apos;，f">
+gulp.task（&amp;">
 
 
 
@@ -267,7 +267,7 @@ gulp.task（&amp;apos; default &amp;apos;，f">
       
 
       
-        <p>第一步：</p>
+        <h3 id="gulp安装"><a href="#gulp安装" class="headerlink" title="gulp安装"></a>gulp安装</h3><p>学习gulp，最好的导师是npm<br>第一步：</p>
 <p>全局安装 gulp </p>
 <pre><code>$ npm install --global gulp-cli
 </code></pre><p>作为项目的开发依赖安装</p>
@@ -275,7 +275,7 @@ gulp.task（&amp;apos; default &amp;apos;，f">
 </code></pre><p>第二步：</p>
 <p>在项目根目录下创建一个名为 gulpfile.js 的文件：</p>
 <pre><code>var gulp =  require（&apos; gulp &apos;）;
-gulp.task（&apos; default &apos;，function（）{
+gulp.task（&apos; default &apos;，function(){
 
 }};
 </code></pre><p>第三步：</p>
@@ -286,6 +286,117 @@ gulp.task（&apos; default &apos;，function（）{
    //....
 }};
 </code></pre><p>终端运行 $ gulp sprit 。就达到只运行这一种task的目的</p>
+<h3 id="使用gulp"><a href="#使用gulp" class="headerlink" title="使用gulp"></a>使用gulp</h3><p>好了，gulp我们已经入门了，下来我们就开始使用它了。</p>
+<h4 id="css0-压缩css"><a href="#css0-压缩css" class="headerlink" title="css0 压缩css"></a>css0 压缩css</h4><p>首先安装： </p>
+<pre><code>npm install gulp-csso --save-dev
+</code></pre><p>安装成功之后，在 gulpfile.js 文件中写入下列代码：</p>
+<pre><code>var gulp = require(&apos;gulp&apos;);
+var csso = require(&apos;gulp-csso&apos;);
+
+gulp.task(&apos;default&apos;, function () {
+    return gulp.src(&apos;./main.css&apos;)
+             .pipe(sourcemaps.init())
+            .pipe(csso())
+            .pipe(sourcemaps.write(&apos;.&apos;))
+           .pipe(gulp.dest(&apos;./out&apos;));
+})
+</code></pre><p>在根目录下创建一个 main.css 文件，并写入样式，运行 $ gulp 这个时候自动会创建一个out文件夹，并在此文件夹下生成一个main.css的文件，这个是csso处理过的文件<br>此处介绍一个超级实在的插件，gulp-sourcemaps。当我们使用sass或者less编译css时，使用浏览器查看，会显示css样式，但此时我们已经压缩了css， 浏览器显示样式永远只会显示第一行，不利于我们查找以及调试，使用了gulp-sourcemaps,浏览器样式栏会显示的是sass或者less利于我们查找。</p>
+<h4 id="uglify-压缩-js"><a href="#uglify-压缩-js" class="headerlink" title="uglify 压缩 js"></a>uglify 压缩 js</h4><p>在最新的 uglify 中使用的是 pump</p>
+<pre><code>$ npm install --save-dev gulp-uglify
+$ npm install --save-dev pump
+</code></pre><p>安装成功之后，在 gulpfile.js 文件中写入下列代码：</p>
+<pre><code>var gulp = require(&apos;gulp&apos;);
+var uglify = require(&apos;gulp-uglify&apos;);
+gulp.task(&apos;compress&apos;, function (cb) {
+  pump([
+        gulp.src(&apos;lib/*.js&apos;),
+        uglify(),
+        gulp.dest(&apos;dist&apos;)
+    ],
+    cb
+  );
+});
+</code></pre><h4 id="es6"><a href="#es6" class="headerlink" title="es6"></a>es6</h4><p>安装</p>
+<pre><code>$ npm install --save-dev gulp-babel babel-preset-es2015
+</code></pre><p>安装完成之后，在 gulpfile.js 文件中写入下列代码:</p>
+<pre><code>import gulp from &apos;gulp&apos;;
+import babel from &apos;gulp-babel&apos;;
+
+gulp.task(&apos;default&apos;, () =&gt; {
+    return gulp.src(&apos;src/app.js&apos;)
+        .pipe(babel({
+            presets: [&apos;es2015&apos;]
+        }))
+        .pipe(gulp.dest(&apos;dist&apos;));
+});
+</code></pre><p>修改好之后，将gulpfile.js改成gulpfile.babel.js文件, 使用命令行</p>
+<pre><code>$ mv &apos;gulpfile.js&apos; &apos;gulpfile.babel.js&apos; 
+</code></pre><p>文件名改好之后，可以在终端运行gulp了</p>
+<p>此时很多童鞋都会遇到下列报错的问题</p>
+<pre><code> Requiring external module babel-register
+/Users/dingxiaopan/workspace/test_gulp/gulpfile.babel.js:1
+(function (exports, require, module, __filename, __dirname) { import gulp from &apos;gulp&apos;;
+</code></pre><p>不用担心，很好解决，在根目录下创建 .babelrc 文件， 并写入：</p>
+<pre><code>{
+&quot;presets&quot;: [&quot;es2015&quot;]
+}
+</code></pre><p>保存运行就ok了</p>
+<h4 id="scss"><a href="#scss" class="headerlink" title="scss"></a>scss</h4><p>首先安装模块：</p>
+<pre><code>$ npm install --save-dev postcss-triangle
+</code></pre><p>安装完成之后，修改gulpfile.babel.js文件</p>
+<pre><code>import scss from &apos;gulp-scss&apos;;
+gulp.task(&apos;default&apos;, () =&gt; {
+return gulp.src(&apos;./src/*.scss&apos;)
+    .pipe(scss())
+    .pipe(gulp.dest(&apos;dist/&apos;));
+});
+</code></pre><p>这样就可以将scss文件编译成css，非常方便。<br>scss与csso结合使用<br>    import scss from ‘gulp-scss’;<br>    gulp.task(‘default’, () =&gt; {<br>    return gulp.src(‘./src/*.scss’)<br>        .pipe(scss())<br>        .pipe(csso())<br>        .pipe(gulp.dest(‘dist/‘));<br>    });</p>
+<h4 id="postcss"><a href="#postcss" class="headerlink" title="postcss"></a>postcss</h4><p>一个我经常使用的模块，使用它去做 triangle 三角形。还有其他作用，自己可以再去延伸。</p>
+<pre><code>$ npm install --save-dev gulp-postcss
+</code></pre><p>gulpfile.babel.js文件写入下列代码：</p>
+<pre><code>gulp.task(&apos;default&apos;, () =&gt; {
+    var processors = [];
+return gulp.src(&apos;./src/*.css&apos;)
+    .pipe(postcss(processors))
+    .pipe(gulp.dest(&apos;dist/&apos;));
+});
+</code></pre><p>如需使用 triangle 这样的方法，就必须在 processors 中引入模块</p>
+<pre><code>var processors = [
+     require(&apos;postcss-triangle&apos;)()
+];
+</code></pre><p>添加之前先安装这个模块</p>
+<pre><code>$ npm install --save-dev postcss-triangle
+</code></pre><p>这样就可以使用这个方法。参考postcss文档去使用</p>
+<p>如需要自动添加浏览器前缀到CSS中，可以使用autoprefixer这个模块，使用方法跟triangle一样。先下载模块，然后在processors引入模块</p>
+<h4 id="browser-sync"><a href="#browser-sync" class="headerlink" title="browser-sync"></a>browser-sync</h4><p>安装模块</p>
+<pre><code>$ npm install browser-sync gulp --save-dev
+</code></pre><p>gulpfile.babel.js文件写入：<br>    gulp.task(‘serve’, [‘sass’], function() {</p>
+<pre><code>browserSync.init({
+    server: &quot;./app&quot;
+});
+
+gulp.watch(&quot;app/scss/*.scss&quot;, [&apos;sass&apos;]);
+gulp.watch(&quot;app/*.html&quot;).on(&apos;change&apos;, reload);
+</code></pre><p>});</p>
+<p>scss编译后的css将注入到浏览器里实现更新</p>
+<pre><code>import browserSync from &apos;browser-sync&apos;;
+
+
+gulp.task(&apos;serve&apos;, [&apos;scss&apos;], function() {
+    browserSync.init({
+        server: &quot;./&quot;
+    });
+    gulp.watch(&quot;./src/style.scss&quot;, [&apos;scss&apos;])
+
+});
+gulp.task(&apos;scss&apos;, function() {
+    return gulp.src(&apos;src/style.scss&apos;)
+        .pipe(scss())
+        .pipe(gulp.dest(&quot;dist/&quot;)) 
+});
+gulp.task(&apos;default&apos;, [&apos;serve&apos;]);
+</code></pre><p>此时就可以实时监听了</p>
+<p>gulp功能是非常强大的，如合成精灵图，压缩图片，resize图片，md5加密等等都可以实现，强烈建议使用学习，既简单又好用，模式都是一样的，无非就是安装模块，引入模块，方法调用</p>
 
       
     </div>
@@ -415,7 +526,7 @@ gulp.task（&apos; default &apos;，function（）{
               
             
             
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#gulp安装"><span class="nav-number">1.</span> <span class="nav-text">gulp安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用gulp"><span class="nav-number">2.</span> <span class="nav-text">使用gulp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#css0-压缩css"><span class="nav-number">2.1.</span> <span class="nav-text">css0 压缩css</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uglify-压缩-js"><span class="nav-number">2.2.</span> <span class="nav-text">uglify 压缩 js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#es6"><span class="nav-number">2.3.</span> <span class="nav-text">es6</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#scss"><span class="nav-number">2.4.</span> <span class="nav-text">scss</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#postcss"><span class="nav-number">2.5.</span> <span class="nav-text">postcss</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#browser-sync"><span class="nav-number">2.6.</span> <span class="nav-text">browser-sync</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
