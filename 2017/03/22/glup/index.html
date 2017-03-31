@@ -79,7 +79,7 @@ $ npm install --save-dev gulp
 在项目根目录下创建一个名为 gulpfile.js 的文件：
 var gulp =  require（&amp;apos; gulp &amp;apos;）;
 gulp.task（&amp;">
-<meta property="og:updated_time" content="2017-03-27T08:32:40.000Z">
+<meta property="og:updated_time" content="2017-03-31T09:26:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gulp">
 <meta name="twitter:description" content="gulp安装学习gulp，最好的导师是npm第一步：
@@ -350,8 +350,15 @@ return gulp.src(&apos;./src/*.scss&apos;)
     .pipe(scss())
     .pipe(gulp.dest(&apos;dist/&apos;));
 });
-</code></pre><p>这样就可以将scss文件编译成css，非常方便。<br>scss与csso结合使用<br>    import scss from ‘gulp-scss’;<br>    gulp.task(‘default’, () =&gt; {<br>    return gulp.src(‘./src/*.scss’)<br>        .pipe(scss())<br>        .pipe(csso())<br>        .pipe(gulp.dest(‘dist/‘));<br>    });</p>
-<h4 id="postcss"><a href="#postcss" class="headerlink" title="postcss"></a>postcss</h4><p>一个我经常使用的模块，使用它去做 triangle 三角形。还有其他作用，自己可以再去延伸。</p>
+</code></pre><p>这样就可以将scss文件编译成css，非常方便。<br>scss与csso结合使用</p>
+<pre><code>import scss from &apos;gulp-scss&apos;;
+gulp.task(&apos;default&apos;, () =&gt; {
+return gulp.src(&apos;./src/*.scss&apos;)
+    .pipe(scss())
+    .pipe(csso())
+    .pipe(gulp.dest(&apos;dist/&apos;));
+});
+</code></pre><h4 id="postcss"><a href="#postcss" class="headerlink" title="postcss"></a>postcss</h4><p>一个我经常使用的模块，使用它去做 triangle 三角形。还有其他作用，自己可以再去延伸。</p>
 <pre><code>$ npm install --save-dev gulp-postcss
 </code></pre><p>gulpfile.babel.js文件写入下列代码：</p>
 <pre><code>gulp.task(&apos;default&apos;, () =&gt; {
