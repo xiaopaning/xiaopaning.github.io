@@ -1,0 +1,639 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="本文只介绍一些scss/sass的语法。
+scss与sass的区别由于大多数同学们，不太懂scss与sass的区别，也包括我刚开始接触的时候，也不大懂。Sass 和 SCSS 其实是同一种东西，我们平时都称之为 Sass，两者之间不同之处有以下两点：
+1.文件扩展名不同，Sass 是以“.sass”后缀为扩展名，而 SCSS 是以“.scss”后缀为扩展名语法书写方式不同2.Sass 是以严格的缩">
+<meta property="og:type" content="article">
+<meta property="og:title" content="scss">
+<meta property="og:url" content="http://yoursite.com/2017/04/14/scss/index.html">
+<meta property="og:site_name" content="xiaopaning'blog">
+<meta property="og:description" content="本文只介绍一些scss/sass的语法。
+scss与sass的区别由于大多数同学们，不太懂scss与sass的区别，也包括我刚开始接触的时候，也不大懂。Sass 和 SCSS 其实是同一种东西，我们平时都称之为 Sass，两者之间不同之处有以下两点：
+1.文件扩展名不同，Sass 是以“.sass”后缀为扩展名，而 SCSS 是以“.scss”后缀为扩展名语法书写方式不同2.Sass 是以严格的缩">
+<meta property="og:updated_time" content="2017-04-14T08:14:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="scss">
+<meta name="twitter:description" content="本文只介绍一些scss/sass的语法。
+scss与sass的区别由于大多数同学们，不太懂scss与sass的区别，也包括我刚开始接触的时候，也不大懂。Sass 和 SCSS 其实是同一种东西，我们平时都称之为 Sass，两者之间不同之处有以下两点：
+1.文件扩展名不同，Sass 是以“.sass”后缀为扩展名，而 SCSS 是以“.scss”后缀为扩展名语法书写方式不同2.Sass 是以严格的缩">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> scss | xiaopaning'blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">xiaopaning'blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                scss
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2017-04-14T10:36:23+08:00" content="2017-04-14">
+              2017-04-14
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文只介绍一些scss/sass的语法。</p>
+<h3 id="scss与sass的区别"><a href="#scss与sass的区别" class="headerlink" title="scss与sass的区别"></a>scss与sass的区别</h3><p>由于大多数同学们，不太懂scss与sass的区别，也包括我刚开始接触的时候，也不大懂。Sass 和 SCSS 其实是同一种东西，我们平时都称之为 Sass，两者之间不同之处有以下两点：</p>
+<p>1.文件扩展名不同，Sass 是以“.sass”后缀为扩展名，而 SCSS 是以“.scss”后缀为扩展名<br>语法书写方式不同2.Sass 是以严格的缩进式语法规则来书写，不带大括号({})和分号(;)，而 SCSS 的语法书写和我们的 CSS 语法书写方式非常类似。<br>比如：sass语法：</p>
+<pre><code>$font-stack: Helvetica, sans-serif  //定义变量
+$primary-color: #333 //定义变量
+
+body
+  font: 100% $font-stack
+  color: $primary-color
+</code></pre><p>scss语法</p>
+<pre><code>$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+</code></pre><p>编译出来的css语法</p>
+<pre><code>body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+</code></pre><p>个人建议还是用一个构建工具，因为scss以及sass手动编译是非常麻烦的。推荐gulp构建工具，本人之前的文章中也介绍过。</p>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><p>SCSS允许使用变量，所有变量以$开头</p>
+<pre><code>　　$blue : #1875e7;　
+　　div {
+　　　color : $blue;
+　　}
+　　
+</code></pre><p>如果变量需要镶嵌在字符串之中，就必须需要写在#{}之中　</p>
+<pre><code>    　　$side : left;
+    　　.rounded {
+    　　　　border-#{$side}-radius: 5px;
+    　　}
+</code></pre><h4 id="计算功能"><a href="#计算功能" class="headerlink" title="计算功能"></a>计算功能</h4><p>SCSS允许在代码中使用算式：</p>
+<pre><code>body {
+　　　　margin: (14px/2);
+　　　　top: 50px + 100px;
+　　　　right: $var * 10%;
+　　}
+</code></pre><h4 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h4><p>SCSS允许选择器嵌套。比如，下面的CSS代码：</p>
+<pre><code>　　div {
+　　　　hi {
+　　　　　　color:red;
+　　　　}
+　　}
+</code></pre><p>在嵌套的代码块内，可以使用&amp;引用父元素。比如a:hover伪类，可以写成：</p>
+<pre><code>　a {
+　        &amp;:hover { color: #ffb3ff; }
+　}
+</code></pre><h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p>SCSS共有两种注释风格<br>/<em> </em>/<br>//</p>
+<h3 id="代码的重用"><a href="#代码的重用" class="headerlink" title="代码的重用"></a>代码的重用</h3><h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><pre><code>.class1 {
+    border: 1px solid #ddd;
+}
+</code></pre><p>class2要继承</p>
+<pre><code>.class2 {
+    @extend .class1;
+    font-size:120%;
+}
+</code></pre><h4 id="Mixin"><a href="#Mixin" class="headerlink" title="Mixin"></a>Mixin</h4><p>重用的代码块</p>
+<pre><code>　　@mixin left {
+　　    float: left;
+　　    margin-left: 10px;
+　　}
+</code></pre><p>调用这个</p>
+<pre><code>　　div {
+　　    @include left;
+　　}
+</code></pre><p>mixin的强大之处，在于可以指定参数和缺省值。</p>
+<pre><code>@mixin left($value: 10px) {
+    float: left;
+    margin-right: $value;
+}
+</code></pre><p>使用的时候，根据需要加入参数</p>
+<pre><code>　div {
+　    @include left(20px);
+　}
+</code></pre><h4 id="颜色函数"><a href="#颜色函数" class="headerlink" title="颜色函数"></a>颜色函数</h4><p> SASS提供了一些内置的颜色函数，以便生成系列颜色。</p>
+<pre><code>lighten(#cc3, 10%) // #d6d65c
+ 　　darken(#cc3, 10%) // #a3a329
+ 　　grayscale(#cc3) // #808080
+ 　　complement(#cc3) // #33c
+</code></pre><h4 id="插入文件"><a href="#插入文件" class="headerlink" title="插入文件"></a>插入文件</h4><p> @import命令，用来插入外部文件</p>
+<pre><code>@import &quot;path/filename.scss&quot;;
+</code></pre><p> 如果插入的是.css文件，则等同于css的import命令</p>
+<pre><code>@import &quot;foo.css&quot;;
+</code></pre><h3 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h3><h4 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h4><p>@if可以用来判断：</p>
+<pre><code>p {
+    @if 1 + 1 == 2 { border: 1px solid; }
+    @if 5 &lt; 3 { border: 2px dotted; }
+}
+</code></pre><p>配套的还有@else命令：</p>
+<pre><code>　@mixin checkBlock($boolean:true){
+    @if $boolean{
+        display:block;
+    }
+    @else{
+        display:none;
+    }
+}
+.block{
+    @include checkBlock;
+}
+.hidden{
+    @include checkBlock(false);
+}
+</code></pre><p>css编译的结果</p>
+<pre><code>.block{display:block}.hidden{display:none}
+</code></pre><h4 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h4><p>1.@for循环语句:</p>
+<pre><code>@for $i from 1 through 3{
+    .item-#{$i}
+    {
+        width:(20px * $i);
+    }
+}
+</code></pre><p>css编辑的结果</p>
+<pre><code>item-1{width:20px}.item-2{width:40px}.item-3{width:60px}
+</code></pre><p>2.@while循环</p>
+<pre><code>$i: 6;
+@while $i &gt; 0 {
+　　.item-#{$i}{
+      width: 2em * $i;
+     }
+     $i: $i - 2;
+}
+</code></pre><p>css编辑的结果</p>
+<pre><code>.item-6{width:12em}　　.item-4{width:8em}　　.item-2{width:4em}
+</code></pre><p>3.@each命令，作用与for类似：</p>
+<pre><code>@each $member in a, b, c, d {
+　    .#{$member} {
+　　　    background-image: url(&quot;/image/#{$member}.jpg&quot;);
+      }
+}
+</code></pre><p>css编辑的结果</p>
+<pre><code>.a{background-image:url(/image/a.jpg)}　
+.b{background-image:url(/image/b.jpg)}　
+.c{background-image:url(/image/c.jpg)}　
+.d{background-image:url(/image/d.jpg)}
+</code></pre><h3 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h3><p>SCSS允许用户编写自己的函数。</p>
+<pre><code>@function double($n) {
+  @return $n * 2;
+}
+#sidebar {
+  width: double(5px);
+}
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/31/随笔/" rel="next" title="随笔">
+                <i class="fa fa-chevron-left"></i> 随笔
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/title.jpg"
+               alt="xiaopan" />
+          <p class="site-author-name" itemprop="name">xiaopan</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#scss与sass的区别"><span class="nav-number">1.</span> <span class="nav-text">scss与sass的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本用法"><span class="nav-number">2.</span> <span class="nav-text">基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#变量"><span class="nav-number">2.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算功能"><span class="nav-number">2.2.</span> <span class="nav-text">计算功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#嵌套"><span class="nav-number">2.3.</span> <span class="nav-text">嵌套</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注释"><span class="nav-number">2.4.</span> <span class="nav-text">注释</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码的重用"><span class="nav-number">3.</span> <span class="nav-text">代码的重用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#继承"><span class="nav-number">3.1.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mixin"><span class="nav-number">3.2.</span> <span class="nav-text">Mixin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#颜色函数"><span class="nav-number">3.3.</span> <span class="nav-text">颜色函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插入文件"><span class="nav-number">3.4.</span> <span class="nav-text">插入文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高级用法"><span class="nav-number">4.</span> <span class="nav-text">高级用法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#条件语句"><span class="nav-number">4.1.</span> <span class="nav-text">条件语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环语句"><span class="nav-number">4.2.</span> <span class="nav-text">循环语句</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义函数"><span class="nav-number">5.</span> <span class="nav-text">自定义函数</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xiaopan</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
