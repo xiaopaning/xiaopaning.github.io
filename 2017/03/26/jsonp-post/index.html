@@ -75,7 +75,7 @@ let jsonp = (data,cb)=&amp;gt; {
   const {url,qs} = data;
   // 定义callback名称
   const cb_name = `cb_${Math.random().toString().replace(&amp;apos;.&amp;">
-<meta property="og:updated_time" content="2017-03-26T04:46:35.000Z">
+<meta property="og:updated_time" content="2017-04-26T09:47:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="手写跨域">
 <meta name="twitter:description" content="1.get跨域请求，单一页面，有时候为了jsonp而去引入一个包，是不划算的
@@ -288,6 +288,7 @@ let jsonp = (data,cb)=&gt; {
    var data = JSON.stringify({
        data: &apos;8885&apos;
    });
+   request.withCredentials = true;
    request.setRequestHeader(&quot;Content-type&quot;,&quot;application/x-www-form-urlencoded&quot;);
    request.send(data);
    request.onreadystatechange = function() {
