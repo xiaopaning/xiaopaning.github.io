@@ -77,7 +77,7 @@ $ mkdir myapp
 $ cd myapp
 $ npm init
 $ npm">
-<meta property="og:updated_time" content="2017-06-09T06:43:56.000Z">
+<meta property="og:updated_time" content="2017-06-09T06:46:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Express">
 <meta name="twitter:description" content="一个不会写路由的前端攻城师不是一个好的女程序媛！！！犹豫了一大早，不知道该如何写起，思来想去，决定就从Express说起，从它结束。
@@ -163,7 +163,7 @@ $ npm">
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -173,7 +173,7 @@ $ npm">
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -236,7 +236,7 @@ $ npm">
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2017-06-09T10:33:36+08:00" content="2017-06-09">
               2017-06-09
             </time>
@@ -317,8 +317,7 @@ $ DEBUG=myapp:* npm start //mac 或者 Linux 下运行
 <p>METHOD是请求的方法，</p>
 <p>PATH是服务器上的路径，</p>
 <p>HANDLER是路由匹配正确之后的执行函数.</p>
-<p>####1. method</p>
-<p>在看上面的例子，</p>
+<h4 id="1-method"><a href="#1-method" class="headerlink" title="1. method"></a>1. method</h4><p>在看上面的例子，</p>
 <pre><code>app.get(&apos;/&apos;, function (req, res) {
   res.send(&apos;Hello World!&apos;);
 });
@@ -520,10 +519,10 @@ app.use(&apos;/birds&apos;, birds);
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -540,7 +539,7 @@ app.use(&apos;/birds&apos;, birds);
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">12</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
@@ -573,7 +572,7 @@ app.use(&apos;/birds&apos;, birds);
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Express"><span class="nav-number">1.</span> <span class="nav-text">安装Express</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hello-world"><span class="nav-number">2.</span> <span class="nav-text">Hello world</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Express-目录架构生成器"><span class="nav-number">3.</span> <span class="nav-text">Express 目录架构生成器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本路由"><span class="nav-number">4.</span> <span class="nav-text">基本路由</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-PATH"><span class="nav-number">4.0.1.</span> <span class="nav-text">2. PATH</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-headle"><span class="nav-number">4.0.2.</span> <span class="nav-text">3. headle</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#响应的方法"><span class="nav-number">4.0.3.</span> <span class="nav-text">响应的方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Express-中提供静态文件"><span class="nav-number">5.</span> <span class="nav-text">在 Express 中提供静态文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#app-route"><span class="nav-number">6.</span> <span class="nav-text">app.route()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#express-router-，微型应用程序"><span class="nav-number">7.</span> <span class="nav-text">express.router()，微型应用程序</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Express"><span class="nav-number">1.</span> <span class="nav-text">安装Express</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hello-world"><span class="nav-number">2.</span> <span class="nav-text">Hello world</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Express-目录架构生成器"><span class="nav-number">3.</span> <span class="nav-text">Express 目录架构生成器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本路由"><span class="nav-number">4.</span> <span class="nav-text">基本路由</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-method"><span class="nav-number">4.0.1.</span> <span class="nav-text">1. method</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-PATH"><span class="nav-number">4.0.2.</span> <span class="nav-text">2. PATH</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-headle"><span class="nav-number">4.0.3.</span> <span class="nav-text">3. headle</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#响应的方法"><span class="nav-number">4.0.4.</span> <span class="nav-text">响应的方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Express-中提供静态文件"><span class="nav-number">5.</span> <span class="nav-text">在 Express 中提供静态文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#app-route"><span class="nav-number">6.</span> <span class="nav-text">app.route()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#express-router-，微型应用程序"><span class="nav-number">7.</span> <span class="nav-text">express.router()，微型应用程序</span></a></li></ol></div>
             
           </div>
         </section>
@@ -600,7 +599,7 @@ app.use(&apos;/birds&apos;, birds);
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
