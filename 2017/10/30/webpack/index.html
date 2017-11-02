@@ -58,38 +58,38 @@
 
 
 <meta name="description" content="计划：
-** 1.整体先了解，2.后期分块插入 **
+**1.整体先了解，2.后期分块插入**
 webpack作用
 模块化
 使我们能够实现目前版本的JavaScript不能直接使用的特性，并且之后还能转换为JavaScript文件使浏览器可以识别；
 scss &amp;amp; less 预编译
 压缩代码等
-studying….1.安装webpack1.npm init —- 自动创建配置文件
+# studying….1.安装webpack1.npm init —- 自动创建配置文件
 2.npm install –save-dev we">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack">
 <meta property="og:url" content="http://yoursite.com/2017/10/30/webpack/index.html">
 <meta property="og:site_name" content="xiaopaning'blog">
 <meta property="og:description" content="计划：
-** 1.整体先了解，2.后期分块插入 **
+**1.整体先了解，2.后期分块插入**
 webpack作用
 模块化
 使我们能够实现目前版本的JavaScript不能直接使用的特性，并且之后还能转换为JavaScript文件使浏览器可以识别；
 scss &amp;amp; less 预编译
 压缩代码等
-studying….1.安装webpack1.npm init —- 自动创建配置文件
+# studying….1.安装webpack1.npm init —- 自动创建配置文件
 2.npm install –save-dev we">
-<meta property="og:updated_time" content="2017-10-30T08:20:34.000Z">
+<meta property="og:updated_time" content="2017-11-02T10:44:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack">
 <meta name="twitter:description" content="计划：
-** 1.整体先了解，2.后期分块插入 **
+**1.整体先了解，2.后期分块插入**
 webpack作用
 模块化
 使我们能够实现目前版本的JavaScript不能直接使用的特性，并且之后还能转换为JavaScript文件使浏览器可以识别；
 scss &amp;amp; less 预编译
 压缩代码等
-studying….1.安装webpack1.npm init —- 自动创建配置文件
+# studying….1.安装webpack1.npm init —- 自动创建配置文件
 2.npm install –save-dev we">
 
 
@@ -268,13 +268,13 @@ studying….1.安装webpack1.npm init —- 自动创建配置文件
 
       
         <p>计划：</p>
-<pre><code>** 1.整体先了解，2.后期分块插入 **
+<pre><code>**1.整体先了解，2.后期分块插入**
 </code></pre><p>webpack作用</p>
 <pre><code>模块化
 使我们能够实现目前版本的JavaScript不能直接使用的特性，并且之后还能转换为JavaScript文件使浏览器可以识别；
 scss &amp; less 预编译
 压缩代码等
-</code></pre><h6 id="studying…"><a href="#studying…" class="headerlink" title="studying…."></a>studying….</h6><h3 id="1-安装webpack"><a href="#1-安装webpack" class="headerlink" title="1.安装webpack"></a>1.安装<strong><em>webpack</em></strong></h3><p>1.npm init —- 自动创建配置文件</p>
+</code></pre><h6 id="studying…"><a href="#studying…" class="headerlink" title="# studying…."></a># studying….</h6><h3 id="1-安装webpack"><a href="#1-安装webpack" class="headerlink" title="1.安装webpack"></a>1.安装<strong><em>webpack</em></strong></h3><p>1.npm init —- 自动创建配置文件</p>
 <p>2.npm install –save-dev webpack</p>
 <p>3.建立3个文件</p>
 <p>根目录下建立public 以及 app 文件</p>
@@ -330,8 +330,10 @@ document.querySelector(&quot;#root&quot;).appendChild(greeter());
   &quot;version&quot;: &quot;1.0.0&quot;,
   &quot;description&quot;: &quot;Sample webpack project&quot;,
   &quot;scripts&quot;: {
-    &quot;start&quot;: &quot;webpack&quot; // 修改的是这里，JSON文件不支持注释，引用时请清除
-  },
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,
+    &quot;start&quot;: &quot;webpack&quot;,
+    &quot;server&quot;: &quot;webpack-dev-server --open&quot;
+  },//修改这里的代码
   &quot;author&quot;: &quot;&quot;,
   &quot;license&quot;: &quot;ISC&quot;,
   &quot;devDependencies&quot;: {
@@ -601,20 +603,9 @@ module.exports = {
 </code></pre><ol>
 <li>移除public文件夹，利用此插件，index.html文件会自动生成，此外CSS已经通过前面的操作打包到JS中了。</li>
 <li><p>在app目录下，创建一个index.tmpl.html文件模板，这个模板包含title等必须元素，在编译过程中，插件会依据此模板生成最终的html页面，会自动添加所依赖的 css, js，favicon等文件，index.tmpl.html中的模板源代码如下：</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot;&gt;
-    &lt;title&gt;Webpack Sample Project&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;div id=&apos;root&apos;&gt;
-    &lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</code></pre></li>
-<li><p>更新webpack的配置文件，方法同上,新建一个build文件夹用来存放最终的输出文件</p>
-</li>
+<p> &lt;!DOCTYPE html&gt;</p>
+ <html lang="en"><br>   <head><br>     <meta charset="utf-8"><br>     <title>Webpack Sample Project</title><br>   </head><br>   <body><br>     <div id="root"><br>     </div><br>   </body><br> </html></li>
+<li>更新webpack的配置文件，方法同上,新建一个build文件夹用来存放最终的输出文件</li>
 </ol>
 <pre><code>const webpack = require(&apos;webpack&apos;);
 const HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;);
@@ -733,7 +724,23 @@ module.exports = {
   }
 }
 </code></pre><p>Bigo 大块就完事了，下来就靠自己结合项目去了解吧。Bye!</p>
-
+<p>补充1⃣️：HtmlWebpackPlugin插件</p>
+<p>作用<br>这个插件的作用是依据一个简单的index.html模板，生成一个自动引用你打包后的JS文件的新index.html。这在每次生成的js文件名称不同时非常有用（比如添加了hash值）</p>
+<p>如： 需将index.html放在根目录下的template文件中。这个时候就需要在webpack配置文件中引入这个插件，代码如下：</p>
+<pre><code>const webpack = require(&apos;webpack&apos;);
+const HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;)
+module.exports = {
+  ...
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+        inject: true,
+        filename: &apos;index.html&apos;,
+        template: &apos;template/index.html&apos;//template下的index.html
+    })
+  ]
+}
+</code></pre>
       
     </div>
 
@@ -862,7 +869,7 @@ module.exports = {
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#studying…"><span class="nav-number">1.</span> <span class="nav-text">studying….</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装webpack"><span class="nav-number"></span> <span class="nav-text">1.安装webpack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-webpack-config-js-配合文件"><span class="nav-number"></span> <span class="nav-text">2.webpack.config.js 配合文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-webpack-强大功能"><span class="nav-number"></span> <span class="nav-text">3.webpack 强大功能</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-生成Source-Maps（使调试更容易）"><span class="nav-number"></span> <span class="nav-text">1 生成Source Maps（使调试更容易）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-使用webpack构建本地服务器"><span class="nav-number"></span> <span class="nav-text">2 使用webpack构建本地服务器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-Loaders"><span class="nav-number"></span> <span class="nav-text">3 Loaders</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-Babel"><span class="nav-number"></span> <span class="nav-text">4 Babel</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Babel的安装与配置"><span class="nav-number">1.</span> <span class="nav-text">Babel的安装与配置</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-一切皆模块"><span class="nav-number"></span> <span class="nav-text">5 一切皆模块</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#css-module"><span class="nav-number">1.</span> <span class="nav-text">css module</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#CSS预处理器"><span class="nav-number">2.</span> <span class="nav-text">CSS预处理器</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-插件（Plugins）"><span class="nav-number"></span> <span class="nav-text">4. 插件（Plugins）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#HtmlWebpackPlugin"><span class="nav-number">1.</span> <span class="nav-text">HtmlWebpackPlugin</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Hot-Module-Replacement"><span class="nav-number">2.</span> <span class="nav-text">Hot Module Replacement</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#studying…"><span class="nav-number">1.</span> <span class="nav-text"># studying….</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装webpack"><span class="nav-number"></span> <span class="nav-text">1.安装webpack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-webpack-config-js-配合文件"><span class="nav-number"></span> <span class="nav-text">2.webpack.config.js 配合文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-webpack-强大功能"><span class="nav-number"></span> <span class="nav-text">3.webpack 强大功能</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-生成Source-Maps（使调试更容易）"><span class="nav-number"></span> <span class="nav-text">1 生成Source Maps（使调试更容易）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-使用webpack构建本地服务器"><span class="nav-number"></span> <span class="nav-text">2 使用webpack构建本地服务器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-Loaders"><span class="nav-number"></span> <span class="nav-text">3 Loaders</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-Babel"><span class="nav-number"></span> <span class="nav-text">4 Babel</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Babel的安装与配置"><span class="nav-number">1.</span> <span class="nav-text">Babel的安装与配置</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-一切皆模块"><span class="nav-number"></span> <span class="nav-text">5 一切皆模块</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#css-module"><span class="nav-number">1.</span> <span class="nav-text">css module</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#CSS预处理器"><span class="nav-number">2.</span> <span class="nav-text">CSS预处理器</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-插件（Plugins）"><span class="nav-number"></span> <span class="nav-text">4. 插件（Plugins）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#HtmlWebpackPlugin"><span class="nav-number">1.</span> <span class="nav-text">HtmlWebpackPlugin</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Hot-Module-Replacement"><span class="nav-number">2.</span> <span class="nav-text">Hot Module Replacement</span></a></li></ol></div>
             
           </div>
         </section>
