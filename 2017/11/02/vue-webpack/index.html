@@ -1,0 +1,880 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="vue + vuex + vue-router + webpack
+建立根目录
+
+根目录下 npm init 创建package.json配置文件
+根目录下 建立dist以及src文件 分别存放 webpack编译后的代码 以及 项目源码
+根目录下 建立index.html文件作为 入口文件 ， 代码如下
+      &amp;lt;!DOCTYPE html&amp;gt;
+    &amp;lt;html lang=">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue_webpack">
+<meta property="og:url" content="http://yoursite.com/2017/11/02/vue-webpack/index.html">
+<meta property="og:site_name" content="xiaopaning'blog">
+<meta property="og:description" content="vue + vuex + vue-router + webpack
+建立根目录
+
+根目录下 npm init 创建package.json配置文件
+根目录下 建立dist以及src文件 分别存放 webpack编译后的代码 以及 项目源码
+根目录下 建立index.html文件作为 入口文件 ， 代码如下
+      &amp;lt;!DOCTYPE html&amp;gt;
+    &amp;lt;html lang=">
+<meta property="og:updated_time" content="2017-11-02T10:41:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue_webpack">
+<meta name="twitter:description" content="vue + vuex + vue-router + webpack
+建立根目录
+
+根目录下 npm init 创建package.json配置文件
+根目录下 建立dist以及src文件 分别存放 webpack编译后的代码 以及 项目源码
+根目录下 建立index.html文件作为 入口文件 ， 代码如下
+      &amp;lt;!DOCTYPE html&amp;gt;
+    &amp;lt;html lang=">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> vue_webpack | xiaopaning'blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">xiaopaning'blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                vue_webpack
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2017-11-02T18:40:11+08:00" content="2017-11-02">
+              2017-11-02
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="vue-vuex-vue-router-webpack"><a href="#vue-vuex-vue-router-webpack" class="headerlink" title="vue + vuex + vue-router + webpack"></a>vue + vuex + vue-router + webpack</h3><ul>
+<li><p>建立根目录</p>
+<ul>
+<li>根目录下 npm init 创建package.json配置文件</li>
+<li>根目录下 建立dist以及src文件 分别存放 <strong><em>webpack</em>编译后的代码</strong> 以及 <strong>项目源码</strong></li>
+<li><p>根目录下 建立index.html文件作为 <strong>入口文件</strong> ， 代码如下</p>
+<pre><code>      &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+      &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+      &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;div id=&apos;app&apos;&gt;message&lt;/div&gt;
+      &lt;script src=&apos;dist/main.js&apos;&gt;&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre></li>
+<li><p>在 <em>src</em> 下建立 <em>main.js</em>, 代码如下：</p>
+<pre><code> // import...from的语法是ES6的，需要用到babel，后面再说
+// require的语法是Commonjs的，webpack已经实现了，可以直接使用
+const Vue = require(&apos;vue&apos;)
+new Vue({
+  el: &apos;#app&apos;,
+  data: {
+    message: &apos;Hello Vue.js!&apos;
+    }
+ })
+</code></pre></li>
+</ul>
+</li>
+<li><p>安装模块</p>
+<p>安装Vue：</p>
+<pre><code>npm install vue --save
+</code></pre><p>安装Webpack： </p>
+<pre><code>npm install webpack --save-dev
+</code></pre></li>
+<li><p>使用webpack编译打包<br>在package.json文件中添加一行代码，如下：</p>
+<pre><code>{
+  &quot;name&quot;: &quot;my-project&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;main&quot;: &quot;index.js&quot;,
+  &lt;!--注意以下代码的修改--&gt;
+  &quot;scripts&quot;: {
+      &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
+    },
+  &quot;author&quot;: &quot;&quot;,
+  &quot;license&quot;: &quot;ISC&quot;,
+  &quot;dependencies&quot;: {
+    &quot;vue&quot;: &quot;^2.5.2&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;webpack&quot;: &quot;^3.8.1&quot;
+  }
+}
+</code></pre><!--⚠️如果运行 *npm run server*想起服务，将 *json* 文件中 *scripts*  中的 *start*的* key *值改成 *‘server’*
+-->
+<p>然后运行  <em>npm run server</em>， 浏览器中打开页面。但是会发现启动文件之后，会报错，<em>估计是版本升级的原因</em>。将 <em>main.js</em>文件引入的vue代码替换一下：</p>
+<pre><code>import Vue from &apos;vue/dist/vue.common.js&apos;
+</code></pre><p>然后在运行，就可以了。</p>
+</li>
+<li><p>webpack.config.js文件<br>  根目录建立 <em>webpack.config.js</em> 文件，写入如下代码：</p>
+<pre><code>module.exports = {
+  entry:  &apos;./src/main.js&apos;,
+  output: {
+    path: __dirname + &quot;/dist&quot;,//打包后的文件存放的地方
+    filename: &quot;bundle.js&quot;//打包后输出文件的文件名
+  }
+}
+</code></pre><p>在 <em>package.json</em> 文件中修改代码，如下</p>
+<pre><code>{
+  &quot;name&quot;: &quot;my-project&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;main&quot;: &quot;index.js&quot;,
+  &quot;scripts&quot;: {
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,
+    &quot;start&quot;: &quot;webpack&quot;,
+  },
+  &quot;author&quot;: &quot;&quot;,
+  &quot;license&quot;: &quot;ISC&quot;,
+  &quot;dependencies&quot;: {
+    &quot;vue&quot;: &quot;^2.5.2&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;webpack&quot;: &quot;^3.8.1&quot;
+  }
+}
+</code></pre><p>运行 npm start 。达到了同样的效果。</p>
+</li>
+<li><p>构建本地服务</p>
+<p>1.</p>
+<pre><code>npm install --save-dev webpack-dev-server
+</code></pre><p>webpack配置文件修改代码</p>
+<pre><code>const webpack = require(&apos;webpack&apos;);
+const HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;);
+module.exports = {
+    ..
+  devServer: {
+    contentBase: &quot;./dist&quot;,//本地服务器所加载的页面所在的目录
+    historyApiFallback: true,//不跳转
+    inline: true,//实时刷新
+    hot: true
+  }
+}
+</code></pre></li>
+</ul>
+<p>package.json文件：</p>
+<pre><code>{
+..
+&quot;scripts&quot;: {
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,
+    &quot;start&quot;: &quot;webpack-dev-server --inline --hot&quot;,
+    &quot;server&quot;: &quot;webpack-dev-server --open&quot;
+      },
+..
+}
+</code></pre><p>启动npm start，localhost:8080,就可以看到页面。如果没有看到，不要惊慌，看下原因，如果是浏览器显示 get error字样，哈哈。很简单，如下步骤：</p>
+<p>2.</p>
+<pre><code>npm install --save-dev html-webpack-plugin
+</code></pre><p> webpack配置文件添加代码： </p>
+<pre><code>   const webpack = require(&apos;webpack&apos;);
+  const HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;);
+  module.exports = {
+  ..
+   plugins: [
+       new HtmlWebpackPlugin({
+      inject: true,
+      filename: &apos;index.html&apos;,
+      template:&apos;template/index.html&apos;
+      })
+]
+</code></pre><p>最后一步，在根目录下建立template文件夹，将之前建立好的index.html移到这个文件内。重新运行，就可以了。</p>
+<p>3。引入HotModuleReplacementPlugin热插件</p>
+<pre><code>完整的webpack配置文件应为：
+
+const webpack = require(&apos;webpack&apos;);
+const HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;);
+module.exports = {
+
+  entry:  &apos;./src/main.js&apos;,
+  output: {
+    path: __dirname + &quot;/dist&quot;,
+    filename: &quot;bundle.js&quot;
+  },
+  devServer: {
+    contentBase: &quot;./dist&quot;,//本地服务器所加载的页面所在的目录
+    historyApiFallback: true,//不跳转
+    inline: true,//实时刷新
+    hot: true
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+        inject: true,
+        filename: &apos;index.html&apos;,
+        template:&apos;template/index.html&apos;
+    })
+  ]
+
+}
+</code></pre><p>webpack顺利起个服务就解决了。</p>
+<ul>
+<li>配置路由  vue-router</li>
+</ul>
+<p>安装： </p>
+<pre><code>npm install --save vue-router
+</code></pre><p>在src下创建 router、 vue 以及 components 文件。</p>
+<blockquote>
+<p>router下创建 index.js以及routes.js</p>
+</blockquote>
+<p>routes.js文件</p>
+<pre><code>import Home from &apos;../views/Home.vue&apos;
+export default [
+  {
+    path: &apos;/&apos;,
+    component: Home
+  }
+]
+</code></pre><p>index.js文件</p>
+<pre><code>import Vue from &apos;vue/dist/vue.common.js&apos;
+import Router from &apos;vue-router&apos;
+import routes from &apos;./routes&apos;
+import Home from &apos;../views/Home.vue&apos;
+Vue.use(Router)
+const router = new Router({
+  routes
+})
+export default router
+</code></pre><blockquote>
+<p>views下创建    Home.vue文件</p>
+</blockquote>
+<p>Home.vue 文件</p>
+<pre><code>&lt;template&gt;
+  &lt;div&gt;&lt;hello&gt;&lt;/hello&gt;&lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+  import Hello from &apos;../components/Hello.vue&apos;
+  export default {
+    components: {Hello}
+  }
+&lt;/script&gt;
+</code></pre><blockquote>
+<p>components下创建 Hello.vue</p>
+</blockquote>
+<pre><code>//子组建
+&lt;template&gt;
+  &lt;div&gt;{{message}}&lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  export default {
+    data: () =&gt; ({message: &apos;Hello Vue.js!&apos;})
+  }
+&lt;/script&gt;
+</code></pre><blockquote>
+<p>别忘记修改 main.js 已经 index.html 文件<br>main.js</p>
+</blockquote>
+<pre><code>import Vue from &apos;vue/dist/vue.common.js&apos;    import router from &apos;./router/index.js&apos;
+const app = new Vue({
+  router
+}).$mount(&apos;#app&apos;)
+</code></pre><p>index.html</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Demo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;router-view&gt;&lt;/router-view&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>完事了，运行。大功告成。如果这块路由有点乱。仔细研究下这个代码：  </p>
+<pre><code>html：
+&lt;div id=&quot;app&quot;&gt;
+    &lt;h1&gt;Hello App!&lt;/h1&gt;
+    &lt;p&gt;
+      &lt;router-link to=&quot;/user/foo&quot;&gt;Go to Foo&lt;/router-link&gt;
+      &lt;router-link to=&quot;/user/bar&quot;&gt;Go to Bar&lt;/router-link&gt;
+    &lt;/p&gt;
+    &lt;router-view&gt;&lt;/router-view&gt;
+&lt;/div&gt;
+js:
+    //1.定义模版
+    const User = {
+    template: &apos;&lt;div&gt;User {{ $route.params.id }}&lt;/div&gt;&apos;
+  }
+     //2. 定义路由，并创建 router 实例
+  const router = new VueRouter({
+    routes: [
+      // 动态路径参数 以冒号开头
+      { path: &apos;/user/:id&apos;, component: User }
+    ]
+  })
+  //2-1.2⃣️步可以将定义路由与创建 router 实例分开.如下
+          var routes = { path: &apos;/user/:id&apos;, component: User };
+          const router = new VueRouter({
+            routes
+          })
+  //3. 创建和挂载根实例。
+  const app = new Vue({
+    router
+  }).$mount(&apos;#app&apos;)
+</code></pre><p>万变不离其宗，仔细琢磨下每一步的意义，即使路由在绕来绕去，也都能找到根。</p>
+<ul>
+<li>配置 Vuex</li>
+</ul>
+<p>跟着我的👣啊，慢呀慢呀走👣👣👣👣👣👣。</p>
+<pre><code>npm install vuex --save
+</code></pre><p>哈哈，安装下来了，接下来在建立一大堆的文件，声明： 用vuex做一个加减法。</p>
+<blockquote>
+<p>创建store文件</p>
+</blockquote>
+<ol>
+<li><p>建立入口文件 <em>index.js</em></p>
+<pre><code>//入口问价就是引入需要的文件，把一个个小文件集合起来，暴露给下一个文件，也就是我们这里的 *mian.js*  文件
+import Vue from &apos;vue&apos;
+import Vuex from &apos;vuex&apos;
+import * as actions from &apos;./actions&apos;
+import * as mutations from &apos;./mutations&apos;
+Vue.use(Vuex)
+const store = new Vuex.Store({
+  state: {
+    count: 0
+  },
+  actions,
+  mutations
+})
+if (module.hot) {
+  module.hot.accept([
+    &apos;./actions&apos;,
+    &apos;./mutations&apos;
+  ], () =&gt; {
+    store.hotUpdate({
+      actions: require(&apos;./actions&apos;),
+      mutations: require(&apos;./mutations&apos;)
+    })
+  })
+}
+export default store
+</code></pre></li>
+<li><p>建立 <em>action.js</em></p>
+<pre><code>export const increment = ({ commit }) =&gt; commit(&apos;increment&apos;)
+export const decrement = ({ commit }) =&gt; commit(&apos;decrement&apos;)
+</code></pre></li>
+<li><p>建立 <em>mutations.js</em></p>
+<pre><code>export const increment = state =&gt; {
+  state.count++
+  state.history.push(&apos;increment&apos;)
+}
+
+export const decrement = state =&gt; {
+  state.count--
+  state.history.push(&apos;decrement&apos;)
+}
+</code></pre></li>
+<li>一般会建立一个 <em>type.js</em> 文件，用来存放初始值，我们这里先忽略。</li>
+</ol>
+<p>哈哈,vuex这样就可以了，千万不要忘记我们的入口文件是 main.js ,所以想应用它，得先把他引入。</p>
+<blockquote>
+<p>main.js</p>
+</blockquote>
+<pre><code>import Vue  from &apos;vue&apos;
+import router from &apos;./router&apos;
+import store from &apos;./store/store.js&apos;
+import Hello  from &apos;./components/Hello.vue&apos;
+const App = Vue.extend({store})
+new Vue({
+  el: &apos;#app&apos;,
+  store,
+  render: h =&gt; h(Hello)
+})
+</code></pre><blockquote>
+<p>components/Hello.vue</p>
+</blockquote>
+<pre><code> &lt;template&gt;
+  &lt;div&gt;
+    &lt;p&gt;{{message}}&lt;/p&gt;
+    &lt;p&gt;click count: {{$store.state.count}}&lt;/p&gt;
+    &lt;!--可以直接调用引入的action--&gt;
+    &lt;button @click=&quot;increment&quot;&gt;increase&lt;/button&gt;
+            &lt;button @click=&quot;decrement&quot;&gt;decrement&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  import { mapGetters, mapActions } from &apos;vuex&apos;
+ // 引入action
+  export default {
+     data: () =&gt; ({
+      message: &apos;我咋不会&apos;
+    }),
+    methods: mapActions([
+      &apos;increment&apos;,
+      &apos;decrement&apos;
+    ])
+  }
+&lt;/script&gt;
+&lt;style&gt;
+  button{
+    background: #fff
+  }
+&lt;/style&gt;
+</code></pre><p>可以了，运行一下下。行了吧。开心。。</p>
+<p>至此。搭建基本的这个项目就结束了。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/30/webpack/" rel="next" title="webpack">
+                <i class="fa fa-chevron-left"></i> webpack
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/title.jpg"
+               alt="xiaopan" />
+          <p class="site-author-name" itemprop="name">xiaopan</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#vue-vuex-vue-router-webpack"><span class="nav-number">1.</span> <span class="nav-text">vue + vuex + vue-router + webpack</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xiaopan</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
