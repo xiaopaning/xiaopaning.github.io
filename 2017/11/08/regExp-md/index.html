@@ -73,7 +73,7 @@ JS正则表达式简介与工具使用 https://regexper.com/#b
 匹配邮箱：  
 ^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$
 RegExp对象字面量var">
-<meta property="og:updated_time" content="2017-11-16T02:51:59.000Z">
+<meta property="og:updated_time" content="2017-11-16T09:21:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="regExp.md">
 <meta name="twitter:description" content="正则对我来说一直是一个谜，马马虎虎会用，每次在用的时候都是在试试。偶然情况下看了慕课网的正则表达式，才是真正的也是较全面的了解了下。
@@ -301,13 +301,16 @@ console.log(str.replace(reg, &apos;0&apos;))
 <pre><code>var str = &apos;a1b2c3&apos;
 var reg = /[abc]/g
 console.log(str.replace(reg, &apos;0&apos;))
-</code></pre><h4 id="字符类取反"><a href="#字符类取反" class="headerlink" title="字符类取反"></a>字符类取反</h4></li>
+</code></pre></li>
+</ol>
+<h4 id="字符类取反"><a href="#字符类取反" class="headerlink" title="字符类取反"></a>字符类取反</h4><ol>
 <li><p>使用元字符 ^ 创建反向类／负向类</p>
 </li>
 <li><p>反向类意思是不属于某类的内容</p>
 </li>
+<li><p>[^abc]意思是不是a或b或c的内容</p>
+</li>
 </ol>
-<p>3.[^abc]意思是不是a或b或c的内容</p>
 <p>var str = ‘a1b2c3’<br>var reg = /[^abc]/g<br>console.log(str.replace(reg, ‘0’))</p>
 <h3 id="范围类"><a href="#范围类" class="headerlink" title="范围类"></a>范围类</h3><p>[a-z] [a-zA-Z] [0-9]</p>
 <pre><code> var str = &apos;2017-11-15&apos;
